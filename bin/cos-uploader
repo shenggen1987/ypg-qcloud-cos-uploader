@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const chalk = require('chalk')
+const program = require('commander')
+const uploader = require('../lib/uploader')
+
+program
+    .version(require('../package').version)
+    .usage('Reference document: https://github.com/yuezhilunhui2009/cos-uploader')
+
+const config = require('../lib/config').read()
+if (!config) console.error('config not be found! Reference document: https://github.com/yuezhilunhui2009/cos-uploader')
+uploader.runUploadTasks(config)

@@ -1,0 +1,37 @@
+{
+    "name": "cos-uploader",
+    "version": "1.0.0",
+    "description": "将文件上传到腾讯云COS服务的工具",
+    "bin": {
+        "cos-uploader": "bin/cos-uploader"
+    },
+    "scripts": {
+        "lint:fix": "eslint --fix bin/cos-uploader lib/",
+        "lint": "eslint bin/cos-uploader lib/",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yuezhilunhui2009/cos-uploader.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/yuezhilunhui2009/cos-uploader/issues"
+    },
+    "homepage": "https://github.com/yuezhilunhui2009/cos-uploader#readme",
+    "dependencies": {
+        "commander": "^2.19.0",
+        "cos-nodejs-sdk-v5": "^2.4.12",
+        "qrcode-terminal": "^0.12.0",
+        "single-line-log": "^1.1.2"
+    },
+    "devDependencies": {
+        "eslint": "^5.6.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0"
+    }
+}
