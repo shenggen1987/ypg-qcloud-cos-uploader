@@ -21,6 +21,7 @@
     },
     "homepage": "https://github.com/yuezhilunhui2009/cos-uploader#readme",
     "dependencies": {
+        "chalk": "^2.4.1",
         "commander": "^2.19.0",
         "cos-nodejs-sdk-v5": "^2.4.12",
         "qrcode-terminal": "^0.12.0",
