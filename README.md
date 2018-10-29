@@ -88,7 +88,7 @@ http://myhost.com/foo/bar
 
 ### randomPrefix
 * 必填：否
-* 默认值：{boolean} true
+* 默认值：{boolean} false
 * 说明：生成一个随机前缀拼接在文件路径最前面。
 * 备注：随机前缀相当于为每一次上传的文件都建立了一个随机的文件夹，此随机字符串由 UUID 生成器生成，理论上不会重复。对于使用 webpack 打包的场景，如果 output.publicPath 填写了绝对路径应当关闭此选项。
 ```bash
