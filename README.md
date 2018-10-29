@@ -1,4 +1,4 @@
-# qcloud-
+# qcloud-cos-uploader
 [![Build Status](https://travis-ci.com/yuezhilunhui2009/cos-uploader.svg?branch=master)](https://travis-ci.com/yuezhilunhui2009/cos-uploader)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
