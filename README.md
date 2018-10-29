@@ -9,7 +9,7 @@
 ## 快速开始
 ```bash
 # 安装
-npm i xxx/xxx --save-dev
+npm i qcloud-cos-uploader --save-dev
 
 # 添加配置
 # 在 package.json 中添加以下配置

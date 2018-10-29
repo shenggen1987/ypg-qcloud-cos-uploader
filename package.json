@@ -1,5 +1,5 @@
 {
-    "name": "cos-uploader",
+    "name": "qcloud-cos-uploader",
     "version": "1.0.0",
     "description": "将文件上传到腾讯云COS服务的工具",
     "bin": {
