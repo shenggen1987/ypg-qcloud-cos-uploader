@@ -102,7 +102,7 @@ https://myqcloud.com/ff56b940-d6ad-11e8-99a6-0bcc02982dc7/verbose.html
 
 ### suffix
 * 必填：否
-* 默认值：{object} {}
+* 默认值：{object} {<reg string>: <string|array>} {}
 * 说明：key 为正则字符串，value 为字符串数组，path 匹配的文件上传后 url 会拼上此处配置的字符串。
 * 备注：value 为字符串时，一个文件最后生成 1 个 url，为数组时，将会生成 Array.length 个 url。
 ```bash
