@@ -4,15 +4,13 @@ const path = require('path')
 const chalk = require('chalk')
 const program = require('commander')
 const uploader = require('../lib/uploader')
-const docsTip = require('../lib/config').docsTip
+const config = require('../lib/config')
 
 program
     .version(require('../package').version)
-    .usage(docsTip)
+    .usage(config.CONFIG_DOCS_TIP)
 
 try {
-    const config = require('../lib/config').read()
-    if (!config) console.error(`config can't be found!${docsTip}`)
     uploader.runUploadTasks(config)
 } catch (e) {
     console.log(require('chalk').red(e.message))

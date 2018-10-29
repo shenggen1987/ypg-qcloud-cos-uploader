@@ -75,20 +75,10 @@ cos-uploader 配置书写在项目的 package.json 文件内，配置的字段�
 "path": "/home/xxxuser/xxxproject/dist"
 ```
 
-### ignore
-* 必填：否
-* 默认值：{string} ""
-* 说明：正则表达式字符串，上传将会忽略绝对路径匹配此正则的文件。
-* 备注：
-```js
-// 过滤逻辑
-(new RegExp(filter)).test(path) === false
-```
-
 ### baseUrl
 * 必填：是
-* 说明：访问文件需要的域名。
-* 备注：也可以包含域名、路径等等，它将拼接在文件的绝对路径前面最终通过控制台打印出来。
+* 说明：基本链接，主要包含 url 的协议、域名、服务器上的路径部分
+* 备注：主要用于输出完整的资源链接以方便本地访问，完整 url 拼接规则：${baseUrl} + ${randomPrefix} + ${文件相对路径} + ${suffix}，其中 ${randomPrefix}、${suffix} 部分根据配置生成，默认是没有的。
 ```bash
 # 有意义的值应该类似以下格式
 http://myhost.com
@@ -112,37 +102,26 @@ https://myqcloud.com/ff56b940-d6ad-11e8-99a6-0bcc02982dc7/verbose.html
 
 ### suffix
 * 必填：否
-* 默认值：{&lt;string&gt;: &lt;array&lt;string&gt;&gt;} {}
-* 说明：为页面配置 url 后缀，配置的值如果匹配到对应的页面，会自动拼接在页面 url 最后面。
-* 备注：需要添加参数的链接特别适合配置这个参数，以下给出几个示例：
-```js
-// 为 index.html 配置参数 k=1
-{
-    suffix: {
-        "index\.html$": ["?k=1"]
-    }
-}
+* 默认值：{object} {}
+* 说明：key 为正则字符串，value 为字符串数组，path 匹配的文件上传后 url 会拼上此处配置的字符串。
+* 备注：value 为字符串时，一个文件最后生成 1 个 url，为数组时，将会生成 Array.length 个 url。
+```bash
+# 不配置 suffix 时假设 url 为
+https://myqcloud.com/verbose.html
 
-// 为 index.html 分别配置 k=1 与 k=2
-// 这种情况在二维码开启时会打印两个二维码
-{
-    suffix: {
-        "index\.html$": ["?k=1", "?k=2"]
-    }
-}
+# 配置 suffix 为 {"verbose\\.html": "?k1=1&k2=2"}
+https://myqcloud.com/verbose.html?k1=1&k2=2
 
-// 为 index.html 添加 hash k=1
-{
-    suffix: {
-        "index\.html$": ["#k=1"]
-    }
-}
+# 配置 suffix 为 {"verbose\\.html": ["?k1=1", "?k2=2"]}
+https://myqcloud.com/verbose.html?k1=1
+https://myqcloud.com/verbose.html?k2=2
+
 ```
 
 ### qrcode
 * 必填：否
 * 默认值：{string} '\\.html$'
-* 说明：正则字符串，凡事匹配的 url 都会生成二维码打印到控制台。
+* 说明：正则字符串，凡事匹配的 path 都会生成二维码打印到控制台。
 * 备注：一般都是打印页面二维码，如果打印二维码过多干扰使用，可以填写更符合需要的正则表达式。
 
 ### debug
@@ -155,36 +134,32 @@ https://myqcloud.com/ff56b940-d6ad-11e8-99a6-0bcc02982dc7/verbose.html
 ```js
 {
     // 腾讯云 COS 必要参数
-    "secretId": "",
-    "secretKey": "",
-    "bucket": "",
-    "region": "",
+    'secretId': '',
+    'secretKey': '',
+    'bucket': '',
+    'region': '',
 
     // 本地需要上传的文件夹（不包含文件夹本身）
-    "path": "dist",
-    "filter": "\\.+",
+    'path': 'dist',
 
     // 拼接链接需要的源 url = baseUrl + relativeFilePath
-    "baseUrl": "",
+    'baseUrl': '',
 
     // 是否将文件上传到随机名字的文件夹
-    "randomPrefix": true,
+    'randomPrefix': false,
 
     // key：正则表达式字符串，用于匹配 filePath
     // value：值可以是字符串或者数组，使用数组时会生成 Array.length 个预览链接
     // example：
     //  {
-    //    "foo\\.html$": "?k1=v1&k2=v2#section1"
+    //    'foo\\.html$': '?k1=v1&k2=v2#section1'
     //  }
     // 原始链接：https://xxx.xxx/foo.html
     // 最终打印链接：https://xxx.xxx/foo.html?k1=v1&k2=v2#section1
-    "suffix": {},
+    'suffix': {},
 
     // 生成二维码规则
-    "qrcode": "\\.html$",
-
-    // 是否打印每个文件的上传信息到控制台
-    "debug": false
+    'qrCode': '\\.html$'
 }
 ```
 
