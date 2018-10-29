@@ -1,4 +1,5 @@
-# qcloud-cos-uploader
+# qcloud-
+[![Build Status](https://travis-ci.com/yuezhilunhui2009/cos-uploader.svg?branch=master)](https://travis-ci.com/yuezhilunhui2009/cos-uploader)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 本工具主要使用场景为 web 页面开发阶段需要临时上线检查问题时，特别是在 H5 开发阶段真机调试时，可临时将页面上传到腾讯云 COS 的某个即时创建的随机目录以供预览，配合腾讯云 COS 的生命周期配置，可使此链接在设定时间后自动失效以节省存储空间。
