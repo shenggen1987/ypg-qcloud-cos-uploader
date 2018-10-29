@@ -1,13 +1,13 @@
 {
     "name": "qcloud-cos-uploader",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "将文件上传到腾讯云COS服务的工具",
     "bin": {
-        "cos-uploader": "bin/cos-uploader"
+        "qcloud-cos-uploader": "bin/qcloud-cos-uploader"
     },
     "scripts": {
-        "lint:fix": "eslint --fix bin/cos-uploader lib/",
-        "lint": "eslint bin/cos-uploader lib/",
+        "lint:fix": "eslint --fix bin/qcloud-cos-uploader lib/",
+        "lint": "eslint bin/qcloud-cos-uploader lib/",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {

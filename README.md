@@ -1,10 +1,10 @@
-# cos-uploader
+# qcloud-cos-uploader
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 本工具主要使用场景为 web 页面开发阶段需要临时上线检查问题时，特别是在 H5 开发阶段真机调试时，可临时将页面上传到腾讯云 COS 的某个即时创建的随机目录以供预览，配合腾讯云 COS 的生命周期配置，可使此链接在设定时间后自动失效以节省存储空间。
 
 ## 准备工作
-首先需要有[腾讯云](https://cloud.tencent.com/)账号，然后开通[对象存储服务](https://cloud.tencent.com/product/cos)，在 COS 中创建一个 bucket。为了 cos-uploader 有权将文件上传到你的腾讯云账号所属的 COS bucket 中，需要在[腾讯云后台](https://console.cloud.tencent.com/cos5/key)创建 “云 API 密钥”。
+首先需要有[腾讯云](https://cloud.tencent.com/)账号，然后开通[对象存储服务](https://cloud.tencent.com/product/cos)，在 COS 中创建一个 bucket。为了 qcloud-cos-uploader 有权将文件上传到你的腾讯云账号所属的 COS bucket 中，需要在[腾讯云后台](https://console.cloud.tencent.com/cos5/key)创建 “云 API 密钥”。
 
 ## 快速开始
 ```bash
@@ -28,7 +28,7 @@ npm i qcloud-cos-uploader --save-dev
 # 在 package.json 的 scripts 内配置上传脚本
 {
     "scripts": {
-        "upload": "cos-uploader"
+        "upload": "qcloud-cos-uploader"
     }
 }
 
@@ -37,7 +37,7 @@ npm run upload
 ```
 
 ## 配置说明
-cos-uploader 配置书写在项目的 package.json 文件内，配置的字段为 "cosUploader"，下面是详细的配置说明。
+qcloud-cos-uploader 配置书写在项目的 package.json 文件内，配置的字段为 "cosUploader"，下面是详细的配置说明。
 
 ### secretId, secretKey
 * 必填：是
