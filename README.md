@@ -118,9 +118,9 @@ https://myqcloud.com/verbose.html?k2=2
 
 ```
 
-### qrcode
+### qrCode
 * 必填：否
-* 默认值：{string} '\\.html$'
+* 默认值：{string} "\\.html$"
 * 说明：正则字符串，凡事匹配的 path 都会生成二维码打印到控制台。
 * 备注：一般都是打印页面二维码，如果打印二维码过多干扰使用，可以填写更符合需要的正则表达式。
 
@@ -134,32 +134,34 @@ https://myqcloud.com/verbose.html?k2=2
 ```js
 {
     // 腾讯云 COS 必要参数
-    'secretId': '',
-    'secretKey': '',
-    'bucket': '',
-    'region': '',
+    "secretId": "",
+    "secretKey": "",
+    "bucket": "",
+    "region": "",
 
     // 本地需要上传的文件夹（不包含文件夹本身）
-    'path': 'dist',
+    "path": "dist",
 
     // 拼接链接需要的源 url = baseUrl + relativeFilePath
-    'baseUrl': '',
+    "baseUrl": "",
 
     // 是否将文件上传到随机名字的文件夹
-    'randomPrefix': false,
+    "randomPrefix": false,
 
     // key：正则表达式字符串，用于匹配 filePath
     // value：值可以是字符串或者数组，使用数组时会生成 Array.length 个预览链接
     // example：
     //  {
-    //    'foo\\.html$': '?k1=v1&k2=v2#section1'
+    //    "foo\\.html$": "?k1=v1&k2=v2#section1"
     //  }
     // 原始链接：https://xxx.xxx/foo.html
     // 最终打印链接：https://xxx.xxx/foo.html?k1=v1&k2=v2#section1
-    'suffix': {},
+    "suffix": {},
 
     // 生成二维码规则
-    'qrCode': '\\.html$'
+    "qrCode": "\\.html$",
+
+    "debug": false
 }
 ```
 
