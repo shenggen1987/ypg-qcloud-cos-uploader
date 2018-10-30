@@ -1,6 +1,6 @@
 {
     "name": "qcloud-cos-uploader",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "将文件上传到腾讯云COS服务的工具",
     "bin": {
         "qcloud-cos-uploader": "bin/qcloud-cos-uploader"
